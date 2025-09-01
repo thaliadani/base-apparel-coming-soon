@@ -22,9 +22,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--gradient-1);
     width: 100%;
     height: 100%;
+    background: var(--gradient-1);
 }
 
 .logo {
@@ -51,6 +51,15 @@ main .hero-mobile {
     background-repeat: no-repeat;
     width: 100%;
     min-height: 400px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .content {
@@ -163,32 +172,42 @@ footer .attribution a {
 
 @media screen and (min-width: 1440px) {
     main {
+        background-image: url('../images/bg-pattern-desktop.svg');
+        background-size: cover;
+        background-position: calc(100% - 700px) calc(50% - 100px);
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .container {
         display: grid;
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr 1fr 1fr ;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         grid-template-areas:
             "logo hero "
             "content hero "
             "content hero";
-        height: 100vh;
-        width: 100vw;
+        width: 100%;
+        height: 100%;
     }
-    
+
     .logo {
         grid-area: logo;
         padding: 4rem;
         width: 80%;
         height: 60%;
-    } 
+    }
+
     .hero-mobile {
         display: none;
     }
-    
+
     .hero-desktop {
         grid-area: hero;
         background-image: url('../images/hero-desktop.jpg');
         background-size: contain;
-        background-position:right;
+        background-position: right;
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;
@@ -200,13 +219,13 @@ footer .attribution a {
         width: 80%;
         height: 60%;
     }
-    
+
     .content h1 {
         font-size: 4rem;
         text-align: left;
         padding-bottom: 2rem;
     }
-    
+
     .content p {
         font-size: 1.4rem;
         text-align: left;
@@ -214,7 +233,7 @@ footer .attribution a {
         padding-bottom: 2rem;
     }
 
-    .content form input{
+    .content form input {
         font-size: 1.2rem;
     }
 
@@ -227,7 +246,7 @@ footer .attribution a {
         height: 58px;
         border-radius: 50px;
     }
-    
+
     footer {
         width: 100%;
         height: 100%;
