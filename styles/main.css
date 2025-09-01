@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: default;
+}
+
+:root {
+    --primary-400: hsl(0, 36%, 70%);
+    --primary-500: hsl(0, 93%, 68%);
+    --neutral-900: hsl(0, 6%, 24%);
+
+    --gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient-1);
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+}
+
+main .hero-mobile {
+    background-image: url('../images/hero-mobile.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 400px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    gap: 1rem;
+}
+
+.content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    text-align: center;
+    color: var(--neutral-900);
+}
+
+.content h1 span {
+    color: var(--primary-400);
+    font-weight: 300;
+}
+
+.content p {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--primary-400);
+    line-height: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    position: relative;
+}
+
+form input {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--primary-400);
+    font-size: 1rem;
+    color: var(--primary-400);
+    background: none;
+    cursor: text;
+    outline: none;
+}
+
+form input::placeholder {
+    color: var(--primary-400);
+    font-size: 1rem;
+    opacity: 0.5;
+}
+
+form button {
+    position: absolute;
+    right: -1px;
+    width: 65px;
+    height: 55px;
+    border-radius: 40%;
+    border: none;
+    background: var(--gradient-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 15px 0px hsla(0, 74%, 74%, 0.74);
+}
+
+form button:active {
+    background: linear-gradient(250deg, hsl(0, 70%, 80%), hsl(0, 100%, 93%));
+}
+
+form button img {
+    width: 14px;
+    height: 20px;
+}
+
+form button,
+form img {
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+footer .attribution {
+    font-size: 1rem;
+    text-align: center;
+}
+
+footer .attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr ;
+        grid-template-areas:
+            "logo hero "
+            "content hero "
+            "content hero";
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .logo {
+        grid-area: logo;
+        padding: 4rem;
+        width: 80%;
+        height: 60%;
+    } 
+    .hero-mobile {
+        display: none;
+    }
+    
+    .hero-desktop {
+        grid-area: hero;
+        background-image: url('../images/hero-desktop.jpg');
+        background-size: contain;
+        background-position:right;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content {
+        grid-area: content;
+        padding: 4rem;
+        width: 80%;
+        height: 60%;
+    }
+    
+    .content h1 {
+        font-size: 4rem;
+        text-align: left;
+        padding-bottom: 2rem;
+    }
+    
+    .content p {
+        font-size: 1.4rem;
+        text-align: left;
+        line-height: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .content form input{
+        font-size: 1.2rem;
+    }
+
+    .content form input::placeholder {
+        font-size: 1.2rem;
+    }
+
+    .content form button {
+        width: 100px;
+        height: 58px;
+        border-radius: 50px;
+    }
+    
+    footer {
+        width: 100%;
+        height: 100%;
+    }
+}
